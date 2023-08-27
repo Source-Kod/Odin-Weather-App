@@ -7,5 +7,25 @@
     <link href="style.css" rel="stylesheet" />
     <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body class="flex flex-col bg-neutral-500">
+    <!-- header -->
+    <div class="bg-sky-700">
+      <h1>Weather</h1>
+    </div>
+    <!-- search bar -->
+    <div>
+      <form>
+        <input type="text" name="location" value="" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- current weather -->
+    <div id="current-weather-container"></div>
+    <!-- forecast -->
+    <div>
+      <div id="forecast-1"></div>
+      <div id="forecast-2"></div>
+      <div id="forecast-3"></div>
+    </div>
+  </body>
 </html>
