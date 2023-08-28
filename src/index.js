@@ -36,13 +36,6 @@ function changeWillItRainToEnglish(int) {
   return 'no';
 }
 
-async function updateDom() {
-  const data = await getData();
-
-  createCurrentWeather(data);
-  createForcastWeather(data);
-}
-
 function createCurrentWeather(data) {
   // current location
   const currentLocation = document.querySelector('#current-location');
@@ -108,6 +101,13 @@ function createForcastWeather(data) {
     data.forecast.forecastday[2].day.daily_will_it_rain,
   )}`;
   chanceOfRain3.textContent = `Chance of Rain: ${data.forecast.forecastday[2].day.daily_chance_of_rain}%`;
+}
+
+async function updateDom() {
+  const data = await getData();
+
+  createCurrentWeather(data);
+  createForcastWeather(data);
 }
 
 updateDom();
