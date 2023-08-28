@@ -7,25 +7,67 @@
     <link href="style.css" rel="stylesheet" />
     <script src="main.js" defer></script>
   </head>
-  <body class="flex flex-col bg-neutral-500">
+  <body>
     <!-- header -->
-    <div class="bg-sky-700">
-      <h1>Weather</h1>
+    <div class="flex w-screen justify-center bg-sky-700">
+      <h1 class="p-3 text-5xl">Weather App</h1>
     </div>
-    <!-- search bar -->
-    <div>
-      <form>
-        <input type="text" name="location" value="" />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <!-- current weather -->
-    <div id="current-weather-container"></div>
-    <!-- forecast -->
-    <div>
-      <div id="forecast-1"></div>
-      <div id="forecast-2"></div>
-      <div id="forecast-3"></div>
+    <!-- content section -->
+    <div
+      class="flex h-screen w-screen flex-col items-center gap-4 bg-neutral-500"
+    >
+      <!-- search bar -->
+      <div>
+        <form>
+          <input type="text" name="location" value="" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- current weather -->
+      <div
+        id="current-weather-container"
+        class="flex flex-col items-center rounded-lg bg-blue-200 p-2 opacity-50"
+      >
+        <p id="current-location" class="p-2 text-2xl font-bold"></p>
+        <p id="current-status" class="text-xl font-bold"></p>
+        <p id="current-temp-f" class="font-bold"></p>
+        <p id="current-feel"></p>
+        <p id="current-humidity"></p>
+        <p id="curent-wind"></p>
+      </div>
+      <!-- forecast -->
+      <div class="flex justify-center gap-3">
+        <div
+          id="forecast-1"
+          class="flex flex-col items-center gap-2 rounded-lg bg-blue-200 p-2 opacity-50"
+        >
+          <p class="p-2 text-2xl font-bold">Today</p>
+          <p id="forcast-1-max"></p>
+          <p id="forcast-1-min"></p>
+          <p id="forcast-1-will-rain"></p>
+          <p id="forcast-1-chance-of-rain"></p>
+        </div>
+        <div
+          id="forecast-2"
+          class="flex flex-col items-center gap-2 rounded-lg bg-blue-200 p-2 opacity-50"
+        >
+          <p class="p-2 text-2xl font-bold">Tomorrow</p>
+          <p id="forcast-2-max"></p>
+          <p id="forcast-2-min"></p>
+          <p id="forcast-2-will-rain"></p>
+          <p id="forcast-2-chance-of-rain"></p>
+        </div>
+        <div
+          id="forecast-3"
+          class="flex flex-col items-center gap-2 rounded-lg bg-blue-200 p-2 opacity-50"
+        >
+          <p class="p-2 text-2xl font-bold">Overmorrow</p>
+          <p id="forcast-3-max"></p>
+          <p id="forcast-3-min"></p>
+          <p id="forcast-3-will-rain"></p>
+          <p id="forcast-3-chance-of-rain"></p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
