@@ -32,8 +32,7 @@ async function getPublicIP() {
 }
 
 function changeWillItRainToEnglish(int) {
-  if (int === 1) return 'yes';
-  return 'no';
+  return int === 1 ? 'yes' : 'no';
 }
 
 function createCurrentWeather(data) {
