@@ -1,13 +1,21 @@
 import KEY from '../key.js';
 
 async function getLocation() {
-  let location = 'london';
-  // if (sessionStorage.getItem('location' !== null)) location = sessionStorage.getItem('location');
+  let location = sessionStorage.getItem('location');
 
-  // if (sessionStorage.getItem('location' === null)) location = await getPublicIP();
-  location = await getPublicIP();
+  if (location === null) location = await getPublicIP();
+  return location || 'london';
+}
 
-  return location;
+function searchBar() {
+  const searchText = document.querySelector('#search-text');
+  const searchForm = document.querySelector('#search-form');
+
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    sessionStorage.setItem('location', searchText.value);
+    updateDom();
+  });
 }
 
 async function getData() {
@@ -104,6 +112,8 @@ function createForcastWeather(data) {
 
 async function updateDom() {
   const data = await getData();
+
+  searchBar();
 
   createCurrentWeather(data);
   createForcastWeather(data);

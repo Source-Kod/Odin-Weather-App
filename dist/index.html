@@ -18,8 +18,14 @@
     >
       <!-- search bar -->
       <div class="p-4">
-        <form class="flex gap-3">
-          <input type="text" name="location" placeholder="Enter a location" />
+        <form class="flex gap-3" id="search-form">
+          <input
+            type="text"
+            name="location"
+            placeholder="Enter a location"
+            id="search-text"
+            required="true"
+          />
           <button
             type="submit"
             class="border-1 rounded-md border border-blue-300 bg-blue-400 p-1"
