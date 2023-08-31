@@ -1,4 +1,4 @@
-import KEY from '../key.js';
+const KEY = '38979132bb6946f98de40845232308';
 
 async function getLocation() {
   let location = sessionStorage.getItem('location');
