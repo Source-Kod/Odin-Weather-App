@@ -1,11 +1,14 @@
-const KEY = ${{env.API_KEY}};
+import dotenv from "dotenv";
+dotenv.config();
+
+const KEY = process.env.API_KEY;
+console.log(`API Key: ${KEY}`);
 
 async function getLocation() {
-  // let location = sessionStorage.getItem("location");
+  let location = sessionStorage.getItem("location");
 
-  // if (location === null) location = await getPublicIP();
-  // return location || "london";
-  return "london";
+  if (location === null) location = await getPublicIP();
+  return location || "london";
 }
 
 function searchBar() {
