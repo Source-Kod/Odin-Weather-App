@@ -1,4 +1,4 @@
-const KEY = "$API_KEY";
+const KEY = process.env.API_KEY;
 
 async function getLocation() {
   // let location = sessionStorage.getItem("location");
