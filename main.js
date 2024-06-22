@@ -1,4 +1,4 @@
-const KEY = "$SECRET_KEY";
+const KEY = "$API_KEY";
 
 async function getLocation() {
   let location = sessionStorage.getItem("location");

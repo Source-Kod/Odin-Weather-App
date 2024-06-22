@@ -32,8 +32,17 @@ jobs:
       - name: build
         run: npm run build
 
+      - name: Get Secrets
+        uses: bitwarden/sm-action@v2
+        with:
+          access_token: ${{ secrets.BW_ACCESS_TOKEN }}
+          base_url: https://vault.bitwarden.com
+          secrets: |
+            0c5273b3-e6eb-498e-8056-b197001058b4 > API_KEY
+            0fca4b64-047c-4f69-89db-b19700643dbe > deploy_key
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: "$deploy_key"
           publish_dir: ./dist
