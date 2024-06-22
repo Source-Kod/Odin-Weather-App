@@ -1,10 +1,11 @@
 const KEY = "$API_KEY";
 
 async function getLocation() {
-  let location = sessionStorage.getItem("location");
+  // let location = sessionStorage.getItem("location");
 
-  if (location === null) location = await getPublicIP();
-  return location || "london";
+  // if (location === null) location = await getPublicIP();
+  // return location || "london";
+  return "london";
 }
 
 function searchBar() {
