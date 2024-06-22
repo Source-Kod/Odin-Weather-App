@@ -28,6 +28,12 @@ jobs:
 
       - name: npm install
         run: npm install
+
+      - name: copy js file into dist
+        run: cp main.js dist/
+
+      - name: run tailwindcss
+        run: npx tailwindcss -i ./input.css -o ./output.css
             
       - name: build
         run: npm run build
@@ -41,8 +47,6 @@ jobs:
             0c5273b3-e6eb-498e-8056-b197001058b4 > API_KEY
             0fca4b64-047c-4f69-89db-b19700643dbe > deploy_key
 
-      - name: copy js file into dist
-        run: cp main.js dist/ && cp output.css dist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
