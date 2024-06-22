@@ -1,11 +1,10 @@
-const KEY = process.env.API_KEY;
+const KEY = "29236acac0a3406a8a705903242206";
 
 async function getLocation() {
-  // let location = sessionStorage.getItem("location");
+  let location = sessionStorage.getItem("location");
 
-  // if (location === null) location = await getPublicIP();
-  // return location || "london";
-  return "london";
+  if (location === null) location = await getPublicIP();
+  return location || "london";
 }
 
 function searchBar() {
