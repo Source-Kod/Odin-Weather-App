@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-console.log(process.env);
 const KEY = process.env.API_KEY;
 console.log(`API Key: ${KEY}`);
 
