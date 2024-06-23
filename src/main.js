@@ -1,3 +1,4 @@
+console.log(process.env.API_KEY);
 const KEY = process.env.API_KEY;
 console.log(`API Key: ${KEY}`);
 
