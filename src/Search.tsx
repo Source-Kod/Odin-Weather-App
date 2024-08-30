@@ -1,29 +1,26 @@
+//Not happy with this mess. I'll be back.
+import { useState } from "react";
+
 function SearchBar() {
-  const handleSubmit = (event: React.FormEvent) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const locationInput = form.elements.namedItem(
-      "location",
-    ) as HTMLInputElement;
-    const location = locationInput.value;
-
-    // Store the location in sessionStorage
-    sessionStorage.setItem("location", location);
-
-    console.log("Location:", location);
-    // Add your additional logic here if needed
+    sessionStorage.setItem("location", inputValue);
+    window.location.reload(); // Refresh the page because I cant figure out how to just reload the parts I need with new location.
+    // This was so much easier in plain JS wtf.
   };
 
   return (
     <div>
-      <form className="flex gap-3" id="search-form" onSubmit={handleSubmit}>
+      <form className="flex gap-3" onSubmit={handleSubmit}>
         <input
           type="text"
           name="location"
           placeholder="Enter a location"
-          id="search-text"
           required
-          aria-label="Location"
+          value={inputValue} //I'm not understanding forms in react. Plain javascript made so much more sense.
+          onChange={(e) => setInputValue(e.target.value)} //thx AI
         />
         <button
           type="submit"

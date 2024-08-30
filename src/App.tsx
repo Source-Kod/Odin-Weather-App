@@ -21,7 +21,6 @@ function App() {
         const response = await fetch(
           `https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${location}&days=3`,
         );
-
         const data = await response.json();
         setWeatherData(data);
       } catch (err) {
