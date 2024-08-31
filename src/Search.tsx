@@ -1,10 +1,11 @@
 //Not happy with this mess. I'll be back.
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 
 function SearchBar() {
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    //dont know what FormEvent is but needed it for typescript to build cause event was "any"
     event.preventDefault();
     sessionStorage.setItem("location", inputValue);
     window.location.reload(); // Refresh the page because I cant figure out how to just reload the parts I need with new location.
