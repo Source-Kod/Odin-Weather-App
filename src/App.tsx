@@ -11,7 +11,7 @@ function getLocation() {
 }
 
 function App() {
-  const KEY = "6faffd7330cb4076b8963711242808";
+  const KEY = {import.meta.env.VITE_API_KEY};
   const location: string = getLocation();
   const [weatherData, setWeatherData] = useState(null);
 
